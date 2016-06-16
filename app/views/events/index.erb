@@ -1,0 +1,16 @@
+<div class= "all events">
+  <h1>Explore All Events</h1>
+  <p>Explore Unique Dining Experience with New Friends</p>
+</div>
+
+<div class="event_wrapper">
+  <% @events.each do |event|%>
+    <div class = "event">
+    <img src="/images/<%=event.image_file%>">
+    <!-- <img src = "<%=event.image_file%>"> -->
+    <h3> <%=event.title%> </h3>
+    <h3> <%=event.capacity%> </h3>
+    <h3> <%=event.price%> </h3>
+    </div>
+  <%end%>
+</div>

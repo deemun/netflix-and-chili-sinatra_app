@@ -4,10 +4,9 @@ get '/' do
 end
 
 
-get '/events' do
+get '/events/index' do
 	
-	@events = events.all  #Active record object being transferred into a variable.
-	puts @events.class
+	@events = Event.all  #Active record object being transferred into a variable.
 	erb :'events/index'
 end
 
@@ -23,3 +22,4 @@ post '/events' do  #accepting the form data and updating the messages table in d
 		erb :'events/new'
 	end
 end
+

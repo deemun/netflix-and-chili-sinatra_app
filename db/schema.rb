@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616184238) do
+ActiveRecord::Schema.define(version: 20160616222050) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "users_id",   null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160616184238) do
     t.datetime "event_date",  null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image_file"
   end
 
   create_table "registrations", force: :cascade do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160616184238) do
     t.boolean  "approver",      default: false, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "name"
   end
 
 end

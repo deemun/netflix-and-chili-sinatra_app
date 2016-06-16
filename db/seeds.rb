@@ -1,0 +1,10 @@
+Event.create title:"Aladin and Arabian", address:"300 west Hasting", capacity:10, description:"Come and enjoy the unique experienece of authentic arabian food perpared by chef Mohammad followed by the presentation of the disney classic Aladin",price:50, event_date:'20-06-2016 20:00:00',
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
+Event.create title:"arabian evening", address:"300 west Hasting", capacity:10, description:"come and ahave some fun",price:50, event_date:'20-06-2016 20:00:00'
