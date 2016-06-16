@@ -11,6 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160616184238) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "users_id",   null: false
+    t.integer  "events_id",  null: false
+    t.string   "message",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "users_id"
+    t.string   "address",     null: false
+    t.integer  "capacity",    null: false
+    t.string   "title",       null: false
+    t.string   "description", null: false
+    t.integer  "price",       null: false
+    t.datetime "event_date",  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer  "users_id"
+    t.integer  "events_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                         null: false
+    t.string   "password_hash",                 null: false
+    t.boolean  "approver",      default: false, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
 
 end
