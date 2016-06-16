@@ -18,6 +18,33 @@
   <title></title>
 </head>
 <body>
+
+<!-- consistent nav bar on top -->
+
+    <nav>
+      <h1> 
+      <a href = "/"> Netflix and Chili? </a>
+      </h1>
+      <ul>
+        <li>
+          <a href = "#"> something else here </a>  <!-- add more -->
+        </li>
+        <li>
+          <% if current_user %>
+            <h6> Welcome, <%= current_user.email %></h6>   <!-- change email to name -->
+            <a href="/logout">Logout</a>
+          <% else %>
+            <a href = "/login"> Login </a>
+            <a href="/signup">Logout</a>
+          <% end %>
+        </li>
+      </ul>
+     </nav> 
+    
+
+
+<!-- page content -->
+
   <%= yield %>
 </body>
 </html>
