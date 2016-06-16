@@ -58,7 +58,7 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/'
   else
-    erb :signup
+    erb :login
   end
 end
 
@@ -72,7 +72,10 @@ get '/signup' do
 end
 
 post '/signup' do
-  user = User.new(params)
+  user = User.new(
+    name: params[:name],
+    email: params[:email],
+    password_hash: params[:password_hash])
   if user.save
     session[:user_id] = user.id
     redirect '/'
