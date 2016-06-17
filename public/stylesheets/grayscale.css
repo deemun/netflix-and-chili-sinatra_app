@@ -69,6 +69,16 @@ a:focus {
     color: #1d9b6c;
 }
 
+
+#logininfo {
+    color:#6B6B6B;
+    text-shadow: 1px 1px white;
+    font-weight: 900;
+    font-size: 15px;
+
+}
+
+
 .light {
     font-weight: 400;
 }

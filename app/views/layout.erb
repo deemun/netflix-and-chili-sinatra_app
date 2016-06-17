@@ -64,17 +64,18 @@
                         <a href="/events">All Events</a>
                     </li>
                     
-                    <li>
-                    <% if current_user %>   <!-- Eamons code for logged in -->
-                       Welcome, <%= current_user.name %> 
+                    
+                        <% if current_user %>   <!-- Eamons code for logged in -->
+                          <li class="page-scroll"> <a id="logininfo" href="" style="color:#6B6B6B">Welcome, <%= current_user.name %></a></li>
+                          <li> <a href="/logout">Log out</a> </li>
                       
                       
-                      <a href="/logout">Log out</a>   <!-- change email to name -->
-                      </li>
+                        <!-- change email to name -->
+                    
                     <% else %>
-                      <a href = "/login"> Log in <i class="fa fa-user" aria-hidden="true"></i></a>
+                     <li> <a href = "/login"> Log in <i class="fa fa-user" aria-hidden="true"></i></a>  </li> 
                     <% end %>
-                  </li> 
+                 
                 </ul>
                 
             </div>
