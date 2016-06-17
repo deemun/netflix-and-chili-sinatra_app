@@ -1,4 +1,8 @@
-Event.create title: "Aladdin and Arabian", address: "300 west Hasting", capacity: 10, description: "Come and enjoy the unique experienece of authentic arabian food perpared by chef Mohammad followed by the presentation of the disney classic Aladdin",price: 50, event_date: '20-06-2016 20:00:00', image_file: "aladdin.jpeg"
+require "./app/models/event"
+
+
+
+Event.create(title: "Aladdin and Arabian", address: "300 west Hasting", capacity: 10, description: "Come and enjoy the unique experienece of authentic arabian food perpared by chef Mohammad followed by the presentation of the disney classic Aladdin",price: 50, event_date: '20-06-2016 20:00:00', image_file: "aladdin.jpeg")
 
 Event.create title: "A Lion King Evening with African Cuisine", address: "19 Stanley Park West", capacity: 15, description: "We invite you to join mama patience for an evening of African cuisine prepared intrue African style. We will eat, we will dance before settelig down to the Lion King",price: 50, event_date: '21-06-2016 19:00:00', image_file: "lionking.jpeg"
 

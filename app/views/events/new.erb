@@ -1,18 +1,75 @@
+<div class="col-md-offset-4 col-md-4">
+
+<h1>Create an Event</h1>
+
+<hr>
+<hr>
+
+<!-- <h1>Submit a Song</h1>
+
+<% if @song && @song.errors.any? %>
+ <div>
+   <strong>Some issues with your message, please fix this: </strong>
+   <ul>
+     <% @song.errors.full_song.each do |song| %>
+       <li><% song %></li>
+     <% end %>  
+   </ul>
+ </div>  
+<% end %>
+<hr/> -->
+
 <form method="post" action="/events">
-	<div>
-		<label> Author:</label>
-		    <input type="text" name="author" value="<%= @message && @message.author %>">
-	</div>
-	<div>
-		<label>Title:</label>
-		    <input type="text" name="title" value="<%= @message && @message.title %>">
-	</div>
-	<div>
-		<label>Content:</label>
-		    <input type="text" name="content"  value="<%= @message && @message.content %>"> 
-		    <!-- name = the name of the params in action -->
-	</div>
-	<div>
-		<input type="submit" value="Submit">
-	</div>
+  
+  <div>
+    <label>Event Title:</label>
+    <input type="text" name="title" class="form-control" value="<%=@event && @event.title %>">
+  </div>
+
+ <div>
+   <label>Description:</label>
+   <!-- <input type="textarea" name="author" class="form-control" value="<%=@song && @song.author %>"> -->
+   <textarea name="description" class="form-control" value="<%=@event && @event.description %>"></textarea>
+ </div>
+
+ <div>
+   <label>Capacity:</label>
+   <input type="integer" name="capacity" class="form-control" value="<%=@event && @event.capacity %>">
+ </div>
+
+ <div>
+   <label>Price:</label>
+   <input type="integer" name="price" class="form-control" value="<%=@event && @event.price %>">
+ </div>
+
+ <div>
+   <label>Event Date:</label>
+   <input type="text" name="event_date" class="form-control" value="<%=@event && @event.event_date %>">
+ </div>
+
+<!-- We will have some issues with the below being an image and the type of input type we are assigning. Come back too. -->
+
+ <div>
+   <label>Image:</label>
+   <input type="text" name="image_file" class="form-control" value="<%=@event && @event.image_file %>">
+ </div>
+
+ <div>
+   <br>
+   <button class="btn btn-lg btn-primary btn-block" type="submit" value ="Create Event">Create Event</button>
+   <!-- <input type="submit" value ="Create Song"> -->
+ </div>
+
+
 </form>
+
+<!-- <div class="row">
+ <div class="col-xs-6 col-md-3">
+   <a href="#" class="thumbnail">
+     <img src="..." alt="...">
+   </a>
+ </div>
+ ...
+</div> -->
+
+</div>
