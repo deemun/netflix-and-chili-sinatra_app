@@ -1,9 +1,7 @@
 helpers do 
-
   def current_user 
     User.find(session[:user_id]) if session[:user_id]
   end
-
 end 
 
 # Homepage (Root path)
@@ -11,27 +9,29 @@ get '/' do
   erb :index
 end
 
-
-
-
-
-
 #-------for event posting----------#
-
-#needs fixing, make sure schema column names match
 
 
 get '/events' do
-	
 	@events = Event.all  #Active record object being transferred into a variable.
 	erb :'events/index'
 end
 
 get '/events/new' do
+  @event = Event.new
   erb :'/events/new'
 end
 
-post '/events' do  #accepting the form data and updating the messages table in db
+
+#---------- for finding specific event--------#
+
+get '/events/:id' do 
+  @event = Event.find(params[:id])
+  erb :'/event_details/index'
+end
+
+
+post '/events/new' do  #accepting the form data and updating the messages table in db
 	@event = Event.new(
 		title: params[:title], #params title comes from form. title on left is DB
 		address: params[:address],
@@ -41,13 +41,12 @@ post '/events' do  #accepting the form data and updating the messages table in d
 		event_date: params[:event_date],
 		image_file: params[:image_file]
 	)
-	if @events.save
+	if @event.save   
 		redirect '/events'
 	else
 		erb :'events/new'
 	end
 end
-
 
 #-------login and registration----------#
 
@@ -98,18 +97,6 @@ get '/logout' do
   session.clear
   redirect '/'
 end
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
