@@ -31,11 +31,10 @@
         </li>
         <li>
           <% if current_user %>
-            <h6> Welcome, <%= current_user.email %></h6>   <!-- change email to name -->
+            <h6> Welcome, <%= current_user.name %></h6>   <!-- change email to name -->
             <a href="/logout">Logout</a>
           <% else %>
             <a href = "/login"> Login </a>
-            <a href="/signup">Logout</a>
           <% end %>
         </li>
       </ul>
