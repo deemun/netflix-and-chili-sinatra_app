@@ -55,19 +55,22 @@
                         <a class="page-scroll" href="#about">How it Works</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download"> <i class="fa fa-spinner fa-spin fa-fw"></i>Explore</a>
+                        <a class="page-scroll" href="#download"> Explore</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="www.google.com">All Events</a>
+                        <a href="/events">All Events</a>
                     </li>
                     
                     <li>
                     <% if current_user %>   <!-- Eamons code for logged in -->
-                      <h6> Welcome, <%= current_user.name %></h6>   <!-- change email to name -->
-                      <a href="/logout">Log out</a>
+                       Welcome, <%= current_user.name %> 
+                      
+                      
+                      <a href="/logout">Log out</a>   <!-- change email to name -->
+                      </li>
                     <% else %>
                       <a href = "/login"> Log in <i class="fa fa-user" aria-hidden="true"></i></a>
                     <% end %>
