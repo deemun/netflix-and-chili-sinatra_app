@@ -9,6 +9,15 @@
 
 
 <h1> <%=@event.title%> </h1>
+<form method="post" action="/events/<%=@event.id%>">
+  <% if !@registration_flag.nil?  %>
+    <% if @registration_flag  %>
+      <button class = "btn btn-primary btn-lg" type="submit" value="cancel" name="commit"> Cancel This Event! </button>
+      <% elsif !@registration_flag  %>
+      <button class = "btn btn-primary btn-lg" type="submit" value="book" name="commit"> Book This Event! </button>
+    <% end %>
+  <% end %>
+</form>
 
 <p><%=@event.description%></p>
   
@@ -37,7 +46,7 @@
     <label>Comment:</label>
     <input type="text" name="message" class="form-control">
   </div>
-  <button class = "btn btn-primary btn-lg" type="submit" > Post your comment! ></button>
+  <button class = "btn btn-primary btn-lg" type="submit" value="comment" name="commit"> Post your comment! ></button>
 
 </form>
 

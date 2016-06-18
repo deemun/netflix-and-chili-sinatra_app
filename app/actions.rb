@@ -38,6 +38,16 @@ end
 
 get '/events/:id' do 
   @event = Event.find(params[:id])
+  
+  if current_user 
+    @registration = Registration.find_by(user_id: session[:user_id],event_id: params[:id])
+    if @registration.nil?
+      @registration_flag = false
+    else
+      @registration_flag = true
+    end
+  end
+  # binding.pry
   @comments = @event.comments
   erb :'/event_details/index'
 end
@@ -69,15 +79,37 @@ end
 # end
 
 post '/events/:id' do
-  @comment = Comment.new(
-    user_id: session[:user_id],
-    event_id: params[:id],
-    message: params[:message])
-  if @comment.save
-    redirect '/events/'+params[:id]
-  else
-    erb :'/event_details/index'
-  end
+  if params[:commit] == "comment"
+      @comment = Comment.new(
+      user_id: session[:user_id],
+      event_id: params[:id],
+      message: params[:message])
+      if @comment.save
+        redirect '/events/'+params[:id]
+      else
+        erb :'/event_details/index'
+      end
+  elsif params[:commit] == "book"
+      @registration = Registration.new(
+      user_id: session[:user_id],
+      event_id: params[:id])
+      if @registration.save
+        @registration_flag = true
+        redirect '/events/'+params[:id]
+      else
+        @registration_flag = false
+        redirect '/events/'+params[:id]
+      end
+  elsif params[:commit] == "cancel"
+      @registration = Registration.find_by(user_id: session[:user_id],event_id: params[:id])
+      if @registration.destroy
+        @registration_flag = false
+        redirect '/events/'+params[:id]
+      else
+        @registration_flag = true
+        redirect '/events/'+params[:id]
+      end
+  end 
 end
 
 #-------login and registration----------#
