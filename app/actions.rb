@@ -9,6 +9,17 @@ get '/' do
   erb :index
 end
 
+# get '/welcome' do
+#   erb :index
+# end
+# get '/welcome/:name/:job' do
+#   @name = params[:name]
+#   @job = params[:job]
+#   erb :index 
+# end
+
+
+
 #-------for event posting----------#
 
 
@@ -27,6 +38,7 @@ end
 
 get '/events/:id' do 
   @event = Event.find(params[:id])
+  @comments = @event.comments
   erb :'/event_details/index'
 end
 
@@ -48,8 +60,27 @@ post '/events/new' do  #accepting the form data and updating the messages table 
 	end
 end
 
-#-------login and registration----------#
+#--------- for messsage posting---------#
 
+
+# get '/songs/:id' do
+#   @song = Song.find params[:id]
+#   erb :'songs/show'
+# end
+
+post '/events/:id' do
+  @comment = Comment.new(
+    user_id: session[:user_id],
+    event_id: params[:id],
+    message: params[:message])
+  if @comment.save
+    redirect '/events/'+params[:id]
+  else
+    erb :'/event_details/index'
+  end
+end
+
+#-------login and registration----------#
 before do
   @current_user = User.find(session[:user_id]) if session[:user_id]
   cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1
@@ -62,7 +93,8 @@ end
 
 post '/login' do
   user = User.find_by(email: params[:email])
-  if user && user.password_hash == params[:password_hash]  
+  
+  if user && user.password_hash == params[:password]  
     session[:user_id] = user.id
     redirect '/'
   else

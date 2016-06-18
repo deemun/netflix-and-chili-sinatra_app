@@ -24,3 +24,39 @@
         </div>
    </div>
 </div>
+
+
+<!-- New stuff -->
+
+
+
+
+<form method="post" action="/events/<%=@event.id%>">
+  
+  <div>
+    <label>Comment:</label>
+    <input type="text" name="message" class="form-control">
+  </div>
+  <button class = "btn btn-primary btn-lg" type="submit" > Post your comment! ></button>
+
+</form>
+
+
+
+<div>
+	<% @comments.each do |comment| %>
+	<div>
+		<h3>
+			<%= comment.message %>  <small> (by: <%= comment.user.name %>)
+      </small>
+		</h3>
+
+	</div>		
+	<% end %>
+</div>	
+
+
+
+
+
+
