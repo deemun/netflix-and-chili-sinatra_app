@@ -4,42 +4,38 @@
 <br>
 <br>
 <br>
+<br>
 
+<div class="wrapper">
 <div class="row">
-<h1>Explore All Events
-<button> <a href= "/events/new"> Create Event Now </a> </button>
-</h1>
-  <p>Explore Unique Dining Experience with New Friends</p>
-  
+<h1>Explore All Events</h1>
+<button id="create-event-button"> <a href= "/events/new"> Create Event Now </a> </button>
 
+
+</div>  
+<br>
+<br>
+<br>
 <div class="event_wrapper1">
   <% @events.each do |event|%>
    <a href = "/events/<%= event.id %>">
-      <div class="col-md-4">
-        <img src="/images/<%=event.image_file%>" width = "200px" height = "200px">
-        <h3> <%=event.title%>  </h3>
-        <h3> <%=event.capacity%> </h3>
-        <h3> <%=event.price%> </h3>
+      <div class="col-md-3">
+
+
+
+
+        <img src="/images/<%=event.image_file%>" width = "250px" height = "200px" class="img-circle"></a>
+        <br>
+        <br>
+        <h4> Event: <%=event.title%>  </h4>
+        <h4> Capacity: <%=event.capacity%> </h4>
+        <h4> Price: <%=event.price%> </h4>
       </div>
-    </a>
+    
     <%end%>
 
-    <ul class="bg-bubbles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    
-  </ul>
+   
+</div>
+
+
 </div>
