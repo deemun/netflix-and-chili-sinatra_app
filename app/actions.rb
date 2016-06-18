@@ -1,3 +1,5 @@
+
+require 'pry'
 helpers do 
   def current_user 
     User.find(session[:user_id]) if session[:user_id]
@@ -24,8 +26,12 @@ end
 
 
 get '/events' do
-	@events = Event.all  #Active record object being transferred into a variable.
-	erb :'events/index'
+	@events = Event.all
+    #Active record object being transferred into a variable.
+  if params[:movie_genre] || params[:cuisine]
+    @events = @events.where(movie_genre: params[:movie_genre], cuisine: params[:cuisine])
+  end
+	erb :'/events/index'
 end
 
 get '/events/new' do
@@ -112,7 +118,38 @@ post '/events/:id' do
   end 
 end
 
+#-------  filtering ----------#
+
+
+post '/events/:id' do
+  @comment = Comment.new(
+    user_id: session[:user_id],
+    event_id: params[:id],
+    message: params[:message])
+  if @comment.save
+    redirect '/events/'+params[:id]
+  else
+    erb :'/event_details/index'
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #-------login and registration----------#
+
+
+
 before do
   @current_user = User.find(session[:user_id]) if session[:user_id]
   cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1

@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160618191605) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image_file"
+    t.string   "movie_genre"
+    t.string   "cuisine"
   end
 
   create_table "registrations", force: :cascade do |t|

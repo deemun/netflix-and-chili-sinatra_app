@@ -10,6 +10,55 @@
 <button> <a href= "/events/new"> Create Event Now </a> </button>
 </h1>
   <p>Explore Unique Dining Experience with New Friends</p>
+
+
+
+<!--    Drop down search    --> 
+
+<form method="get" action="/events">
+    <div>
+     
+      <!-- <input type="hidden" name="test" value="test" /> -->
+      <select name="movie_genre" placeholder="Movie Genre">
+<!--      <% @events.each do |event| %>
+     <option value="<%=event.id%>"><%=event.movie_genre%></option>
+      <%end%>  --> 
+  
+        <option value="horror">Horror</option>
+        <option value="action">Action</option>
+        <option value="adventure">Adventure</option>
+        <option value="classic">Classic</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">Comedy</option>
+
+      </select>
+
+
+      
+
+     
+      
+      <select name="cuisine" placeholder = "Cuisine">
+    <!--   <% @events.each do |event| %>
+     <option value="<%=event.id%>"><%=event.cuisine%></option>
+      <%end%>   -->
+      <option value="indian">Indian</option>
+      <option value="arabian">Arabian</option>
+      <option value="chineese">Chineese</option>
+      <option value="southern">Southern</option>
+      <option value="thai">Thai</option>
+      <option value="traditional">Traditional</option>
+      <option value="japaneese">Japaneese</option>
+      <option value="african">African</option>
+
+      </select>
+    </div>
+
+ <button type="submit" value = "submit">Filter by</button>
+
+</form>    
+
+
   
 
 <div class="event_wrapper1">
@@ -24,22 +73,4 @@
     </a>
     <%end%>
 
-<!--     <ul class="bg-bubbles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    
-  </ul> -->
 </div>
