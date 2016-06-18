@@ -40,7 +40,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="/">
-                    <i class="fa fa-cutlery" aria-hidden="true"></i>  <span class="light">Netflix</span> & Chilli
+                    <i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>  <span class="light">Netflix</span> & Chili
                 </a>
             </div>
 
@@ -66,8 +66,8 @@
                     
                     
                         <% if current_user %>   <!-- Eamons code for logged in -->
-                          <li class="page-scroll"> <a id="logininfo" href="" style="color:#6B6B6B">Welcome, <%= current_user.name %></a></li>
-                          <li> <a href="/logout">Log out</a> </li>
+                          <li class="page-scroll"> <a id="logininfo" href=""> <%= current_user.name %> <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                          <li> <a href="/logout">Log out <i class="fa fa-times" aria-hidden="true"></i></a> </li>
                       
                       
                         <!-- change email to name -->
@@ -105,6 +105,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/javascript/grayscale.js"></script>
+    <script src="/javascript/index.js"></script>
 </body>
 
 
