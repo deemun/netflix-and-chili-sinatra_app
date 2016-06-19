@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 10px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -559,7 +559,9 @@ form {
   
 }
 
+#create-event-button:hover {
 
+}
 
 
 
@@ -570,7 +572,7 @@ form {
 
 
 /*END OF DEEPAKS ADDITIONS*/
-form input {
+form input. {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -731,4 +733,32 @@ form button:hover {
   }
 }
 
+.shrink img {
+  height: 200px;
+  width: 260px;
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+         
+}
+ 
+.shrink img:hover {
+  width: 300px;
+  height: 235px;
+}
 
+h4 {
+    color:white;
+    font-size:15px;
+}
+
+.wrapper {
+    background: url(http://i.huffpost.com/gen/1717619/images/o-DINNER-PARTY-facebook.jpg) no-repeat center center scroll;
+}
+
+#eventalltitle {
+    color:white;
+    text-shadow: 2px 2px black;
+}
