@@ -67,7 +67,10 @@ post '/events/new' do  #accepting the form data and updating the messages table 
 		description: params[:description],
 		price: params[:price],
 		event_date: params[:event_date],
-		image_file: params[:image_file]
+    start_time: params[:start_time],
+		image_file: params[:image_file],
+    movie_genre: params[:movie_genre],
+    cuisine: params[:cuisine]
 	)
 	if @event.save   
 		redirect '/events'
