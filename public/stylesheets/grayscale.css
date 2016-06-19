@@ -572,7 +572,7 @@ form {
 
 
 /*END OF DEEPAKS ADDITIONS*/
-form input. {
+form input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -734,13 +734,10 @@ form button:hover {
 }
 
 .shrink img {
-<<<<<<< HEAD
+
   height: 200px;
   width: 260px;
-=======
-  height: 250px;
-  width: 300px;
->>>>>>> 10pm
+
  
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
