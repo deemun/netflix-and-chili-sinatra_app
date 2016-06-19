@@ -7,19 +7,26 @@
 <br>
 
 <div class="wrapper">
-<div class="row">
 
+<div class="row">
+<br>
+<br>
+
+<h1 id="eventalltitle">Explore All Events</h1>
+<button id="create-event-button"> <a href= "/events/new"> Create Your Own Event </a> </button>
 
 
 
 
 <!--    Drop down search    --> 
-
-<form method="get" action="/events">
-    <div>
+<br>
+<br>
+<form id="create-event-button" method="get" action="/events">
+    
      
       <!-- <input type="hidden" name="test" value="test" /> -->
-      <select name="movie_genre" placeholder="Movie Genre">
+      <select name="movie_genre" placeholder="Movie Genre"><p>
+      <option value="" disabled selected>Genre</option>
 <!--      <% @events.each do |event| %>
      <option value="<%=event.id%>"><%=event.movie_genre%></option>
       <%end%>  --> 
@@ -30,6 +37,7 @@
         <option value="classic">Classic</option>
         <option value="romance">Romance</option>
         <option value="comedy">Comedy</option>
+        <option value="sport">Sports</option>
 
       </select>
 
@@ -42,6 +50,7 @@
     <!--   <% @events.each do |event| %>
      <option value="<%=event.id%>"><%=event.cuisine%></option>
       <%end%>   -->
+      <option value="" disabled selected>Cuisine</option>
       <option value="indian">Indian</option>
       <option value="arabian">Arabian</option>
       <option value="chineese">Chineese</option>
@@ -52,45 +61,58 @@
       <option value="african">African</option>
 
       </select>
-    </div>
+      
+    
 
- <button type="submit" value = "submit">Filter by</button>
+ 
 
 </form>    
-
+<button id="create-event-button" type="submit" value = "submit">Filter</button>
+<br>
+<br>
+<br>
+<br>
 
   
 
-<h1>Explore All Events</h1>
-<button id="create-event-button"> <a href= "/events/new"> Create Event Now </a> </button>
 
-
+</div>
 </div>  
 <br>
 <br>
 <br>
+<div class="container">
 <div class="event_wrapper1">
   <% @events.each do |event|%>
    <a href = "/events/<%= event.id %>">
-      <div class="col-md-3">
+      <div class="col-md-4">
 
 
 
-
-        <img src="/images/<%=event.image_file%>" width = "250px" height = "200px" class="img-circle"></a>
+        <div class="shrink pic">
+        <img src="/images/<%=event.image_file%>" class="img-rounded"></a>
+        </div>
         <br>
-        <br>
+        
         <h4> Event: <%=event.title%>  </h4>
-        <h4> Capacity: <%=event.capacity%> </h4>
+        <h4> Address: <%=event.address%> </h4>
         <h4> Price: <%=event.price%> </h4>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      
       </div>
     
     <%end%>
+
+
 
 
    
 </div>
 
 
-
 </div>
+
