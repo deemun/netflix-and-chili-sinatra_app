@@ -734,8 +734,13 @@ form button:hover {
 }
 
 .shrink img {
+<<<<<<< HEAD
   height: 200px;
   width: 260px;
+=======
+  height: 250px;
+  width: 300px;
+>>>>>>> 10pm
  
   -webkit-transition: all 1s ease;
      -moz-transition: all 1s ease;
@@ -745,8 +750,10 @@ form button:hover {
 }
  
 .shrink img:hover {
-  width: 300px;
-  height: 235px;
+
+  width: 320px;
+  height: 260px;
+
 }
 
 h4 {
@@ -754,7 +761,9 @@ h4 {
     font-size:15px;
 }
 
-.wrapper {
+
+
+#events_header {
     background: url(http://i.huffpost.com/gen/1717619/images/o-DINNER-PARTY-facebook.jpg) no-repeat center center scroll;
 }
 
