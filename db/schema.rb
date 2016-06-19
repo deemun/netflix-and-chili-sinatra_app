@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618191605) do
+ActiveRecord::Schema.define(version: 20160619025530) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -24,17 +24,18 @@ ActiveRecord::Schema.define(version: 20160618191605) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "users_id"
-    t.string   "address",     null: false
-    t.integer  "capacity",    null: false
-    t.string   "title",       null: false
-    t.string   "description", null: false
-    t.integer  "price",       null: false
-    t.datetime "event_date",  null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "image_file"
+    t.string   "address",                  null: false
+    t.integer  "capacity",                 null: false
+    t.string   "title",                    null: false
+    t.string   "description",              null: false
+    t.integer  "price",                    null: false
+    t.string   "event_date",               null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "image_file",  default: ""
     t.string   "movie_genre"
     t.string   "cuisine"
+    t.string   "start_time"
   end
 
   create_table "registrations", force: :cascade do |t|

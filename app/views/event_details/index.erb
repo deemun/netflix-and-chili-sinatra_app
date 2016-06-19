@@ -19,17 +19,19 @@
   <% end %>
 </form>
 
-<p><%=@event.description%></p>
+
   
 
 <div class="event_wrapper1">   
     <div class="col-md-4">
       
           <img src="/images/<%=@event.image_file%>" width = "200px" height = "200px">
+
           <h4> Address: <%=@event.address%> </h4>
           <h4> Seats Left: <%=@event.capacity%> </h4>
           <h4> Price:$<%=@event.price%> </h4>
           <h4> Date: <%=@event.event_date%> </h4>
+
         </div>
    </div>
 </div>

@@ -15,32 +15,47 @@
   
     <div>
       <label>Event Title:</label>
-      <input type="text" name="title" class="form-control" value="<%=@event.title %>">
+      <input type="text" name="title" class="form-control" value="<%=@event.title %>" placeholder="Event Title">
     </div>
 
    <div>
      <label>Description:</label>
-     <textarea name="description" class="form-control" value="<%=@event.description %>"></textarea>
+     <textarea name="description" class="form-control" value="<%=@event.description %>" placeholder="Description"></textarea>
    </div>
 
    <div>
      <label>Capacity:</label>
-     <input type="integer" name="capacity" class="form-control" value="<%=@event.capacity %>">
+     <input type="integer" name="capacity" class="form-control" value="<%=@event.capacity %>" placeholder="Capacity">
    </div>
 
    <div>
      <label>Address:</label>
-     <input type="text" name="address" class="form-control" value="<%=@event.address %>">
+     <input type="text" name="address" class="form-control" value="<%=@event.address %>" placeholder="Address">
    </div>
 
    <div>
      <label>Price:</label>
-     <input type="integer" name="price" class="form-control" value="<%=@event.price %>">
+     <input type="integer" name="price" class="form-control" value="<%=@event.price %>" placeholder="Price">
    </div>
 
    <div>
      <label>Event Date:</label>
-     <input type="text" name="event_date" class="form-control" value="<%=@event.event_date %>">
+     <input type="date" name="event_date" class="form-control" value="<%=@event.event_date %>" placeholder="Event Date">
+   </div>
+
+   <div>
+     <label>Start time:</label>
+     <input type="time" name="start_time" class="form-control" value="<%=@event.start_time %>" placeholder="Start time">
+   </div>
+
+   <div>
+     <label>Movie Genre:</label>
+     <input type="text" name="movie_genre" class="form-control" value="<%=@event.movie_genre %>" placeholder="Movie Genre">
+   </div>
+
+   <div>
+     <label>Cuisine Type:</label>
+     <input type="text" name="cuisine" class="form-control" value="<%=@event.cuisine %>" placeholder="Cuisine Type"  >
    </div>
 
 
