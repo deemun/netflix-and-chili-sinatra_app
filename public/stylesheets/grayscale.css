@@ -298,7 +298,7 @@ a:focus {
 }
 
 .content-section {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .download-section {
@@ -768,3 +768,27 @@ h4 {
     color:white;
     text-shadow: 2px 3px black;
 }
+
+.chili {
+
+color: white !important;
+
+}
+
+
+#about {
+color: white !important;  
+}
+
+#contact {
+color: white !important;  
+}
+
+.heart {
+
+color: pink !important;
+
+}
+
+
+

@@ -1,5 +1,4 @@
 
-require 'pry'
 helpers do 
   def current_user 
     User.find(session[:user_id]) if session[:user_id]
@@ -59,7 +58,7 @@ get '/events/:id' do
       @registration_flag = true
     end
   end
-  # binding.pry
+  
   @comments = @event.comments
   erb :'/event_details/index'
 end
@@ -78,20 +77,14 @@ post '/events/new' do  #accepting the form data and updating the messages table 
     movie_genre: params[:movie_genre],
     cuisine: params[:cuisine]
 	)
-	if @event.save   
+	if @event.save  
 		redirect '/events'
 	else
-		erb :'events/new'
+		erb :'events/new' 
 	end
 end
 
 #--------- for messsage posting---------#
-
-
-# get '/songs/:id' do
-#   @song = Song.find params[:id]
-#   erb :'songs/show'
-# end
 
 post '/events/:id' do
   if params[:commit] == "comment"
@@ -145,8 +138,6 @@ end
 
 #-------login and registration----------#
 
-
-
 before do
   @current_user = User.find(session[:user_id]) if session[:user_id]
   cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1
@@ -196,14 +187,9 @@ get '/logout' do
   redirect '/'
 end
 
-# ---------------myevents-------------
+#--------------- my events -------------#
 
 get '/myevents' do
-# param = session[:user_id]  
-# connection = ActiveRecord::Base.connection
-# @events = connection.execute("Select e.title from events e INNER JOIN registrations r on r.event_id = e.id where r.user_id = #{param} ")
-# binding.pry
-# @events = Event.joins(:registrations).where(user_id: session[:user_id])
 @events = Event.joins(:registrations).where("registrations.user_id = ?", session[:user_id])
   @events.each do |event|
     registration_count = Registration.where(event_id: event.id).count
