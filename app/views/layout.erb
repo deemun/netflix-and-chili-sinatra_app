@@ -51,6 +51,11 @@
                     <li class="hidden">
                         <a href="/"></a>
                     </li>
+                  <%if current_user%>
+                    <li>
+                        <a href="/myevents">My Events</a>
+                    </li>
+                  <%end%>
                     <li>
                         <a class="page-scroll" href="#about">How it Works</a>
                     </li>

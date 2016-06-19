@@ -27,6 +27,10 @@ end
 
 get '/events' do
 	@events = Event.all
+  @events.each do |event|
+    registration_count = Registration.where(event_id: event.id).count
+    event.capacity -= registration_count
+  end
     #Active record object being transferred into a variable.
   if params[:movie_genre] || params[:cuisine]
     @events = @events.where(movie_genre: params[:movie_genre], cuisine: params[:cuisine])
@@ -44,7 +48,9 @@ end
 
 get '/events/:id' do 
   @event = Event.find(params[:id])
-  
+    registration_count = Registration.where(event_id: params[:id]).count
+    @event.capacity -= registration_count
+
   if current_user 
     @registration = Registration.find_by(user_id: session[:user_id],event_id: params[:id])
     if @registration.nil?
@@ -134,18 +140,6 @@ post '/events/:id' do
 end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 #-------login and registration----------#
 
 
@@ -198,6 +192,39 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
+# ---------------myevents-------------
+
+get '/myevents' do
+# param = session[:user_id]  
+# connection = ActiveRecord::Base.connection
+# @events = connection.execute("Select e.title from events e INNER JOIN registrations r on r.event_id = e.id where r.user_id = #{param} ")
+# binding.pry
+# @events = Event.joins(:registrations).where(user_id: session[:user_id])
+@events = Event.joins(:registrations).where("registrations.user_id = ?", session[:user_id])
+  @events.each do |event|
+    registration_count = Registration.where(event_id: event.id).count
+    event.capacity -= registration_count
+  end
+erb :'/event_details/my_event'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
