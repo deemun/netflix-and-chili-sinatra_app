@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="wrapper">
+<div class="row">
+
+ 
+
+
+  
+
+<h1>List of Your Events</h1>
+
+</div>  
+<br>
+<br>
+<br>
+<div class="event_wrapper1">
+  <% @events.each do |event|%>
+   <a href = "/events/<%= event.id %>">
+      <div class="col-md-3">
+
+
+
+
+        <img src="/images/<%=event.image_file%>" width = "250px" height = "200px" class="img-circle"></a>
+        <br>
+        <br>
+        <h4> Event: <%=event.title%>  </h4>
+        <h4> Seats Left: <%=event.capacity%> </h4>
+        <h4> Price: $<%=event.price%> </h4>
+      </div>
+    
+    <%end%>
+
+   
+</div>
+
