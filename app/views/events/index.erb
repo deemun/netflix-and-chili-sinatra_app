@@ -66,9 +66,13 @@
       
     
 
+
  <button id="create-event-button" type="submit" value = "submit" >Filter</button>
 
 </form>    
+ 
+
+
 <br>
 <br>
 <br>
@@ -87,7 +91,8 @@
 <div class="event_wrapper1">
   <% @events.each do |event|%>
    <a href = "/events/<%= event.id %>">
-      <div class="col-md-4">
+      <div class="col-md-4 hvr-float-shadow" >
+
 
 
 

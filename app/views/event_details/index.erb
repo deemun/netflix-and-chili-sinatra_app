@@ -22,17 +22,13 @@
 
 
 
-          <h4> Event Details: <%=@event.description%> </h4>
-          <h4> Address: <%=@event.address%> </h4>
-          <h4> Seats Left: <%=@event.capacity%> </h4>
-          <h4> Price:$<%=@event.price%> </h4>
-          <h4> Date: <%=@event.event_date%> </h4>
+       
 
 
 <div class="row">   
     <div class="col-md-6">
       
-          <img src="/images/<%=@event.image_file%>" width = "260px" height = "240px" style="float:left;">
+          <img src="/images/<%=@event.image_file%>" width = "260px" height = "240px" style="float:left;" class="hvr-float-shadow">
            </div>
            <div class="col-md-6">  <!--seperate column made to space image and text-->
           <h4 style="float:center;"> Address: <%=@event.address%> </h4>
@@ -49,7 +45,7 @@
             <% if @registration_flag  %>
               <button class = "btn btn-danger btn-md" type="submit" value="cancel" name="commit"> Cancel </button>
               <% elsif !@registration_flag  %>
-              <button class = "btn btn-success btn-md" type="submit" value="book" name="commit"> Book </button>
+              <button class = "btn btn-success btn-md hvr-grow-shadow" type="submit" value="book" name="commit"> Book </button>
 
             <% end %>
           <% end %>
@@ -57,7 +53,14 @@
        
    </div>
 </div>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6">
 
+          <h4 style="color: #474747;" id="event_description"> <%=@event.description%> </h4>
+  </div>
+</div>
 
 <!-- New stuff -->
 <br>
@@ -75,7 +78,7 @@
   
  
     <h3> Message Board </h3>
-    <textarea type="text" name="message" class="form-control"></textarea>
+    <textarea type="text" name="message" class="form-control" placeholder="Feel free to post your message here"></textarea>
     <br>
 
   <button type="submit" class="btn btn-primary btn-md" type="submit" value="comment" name="commit"> Post Comment</button>

@@ -545,7 +545,7 @@ form {
   background-color: rgba(255, 255, 255, 0.2);
   width: 250px;
   border-radius: 3px;
-  padding: 10px 15px;
+  
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
@@ -746,8 +746,9 @@ form button:hover {
  
 .shrink img:hover {
 
-  width: 320px;
-  height: 210px;
+  width: 300px;
+  height: 200px;
+
 
 }
 
@@ -801,4 +802,36 @@ box-shadow: 0px 0px 89px 2px rgba(255,255,255,1);
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
       -ms-transition: all 0.5s ease;
+}
+
+#event_description {
+
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color:;
+}
+
+#growpic {
+
+  height: 200px;
+  width: 250px;
+
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease !important;
+       -o-transition: all 1s ease !important;
+      -ms-transition: all 1s ease !important;
+         
+}
+ 
+#growpic :hover {
+
+  
+  height: 250px;
+  width: 300px;
+  
+
 }
