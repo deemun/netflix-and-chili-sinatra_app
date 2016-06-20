@@ -7,7 +7,16 @@
 <br>
 
 <h1 style="text-align: center;">Create an Event</h1>
-
+<% if @event.errors.any? %>
+  <div>
+    <strong>Some issues with your event, please fix them:</strong>
+    <ul>
+      <% @event.errors.full_messages.each do |event| %>
+        <li><%= event %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
   <form method="post" action="/events/new" class>

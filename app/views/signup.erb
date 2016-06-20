@@ -12,6 +12,16 @@
 <div>
   <div>
     <h1 id="signupheader">New User Sign Up</h1>
+<% if @errors && @errors.any? %>
+  <div style="width:350px; margin:0 auto;">
+    <strong>Some issues with your input, please fix them:</strong>
+    <ul>
+      <% @errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
     <form method="POST" action="/signup">
       
