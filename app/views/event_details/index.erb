@@ -1,3 +1,6 @@
+
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -5,27 +8,19 @@
 <br>
 <br>
 
+<br>
+
+
+<div class="container">
 <div class="row">
 
 
 <h1> <%=@event.title%> </h1>
-<form method="post" action="/events/<%=@event.id%>">
-  <% if !@registration_flag.nil?  %>
-    <% if @registration_flag  %>
-      <button class = "btn btn-primary btn-lg" type="submit" value="cancel" name="commit"> Cancel This Event! </button>
-      <% elsif !@registration_flag  %>
-      <button class = "btn btn-primary btn-lg" type="submit" value="book" name="commit"> Book This Event! </button>
-    <% end %>
-  <% end %>
-</form>
+<br>
 
 
-  
 
-<div class="event_wrapper1">   
-    <div class="col-md-4">
-      
-          <img src="/images/<%=@event.image_file%>" width = "200px" height = "200px">
+
 
           <h4> Event Details: <%=@event.description%> </h4>
           <h4> Address: <%=@event.address%> </h4>
@@ -33,41 +28,75 @@
           <h4> Price:$<%=@event.price%> </h4>
           <h4> Date: <%=@event.event_date%> </h4>
 
-        </div>
+
+<div class="row">   
+    <div class="col-md-6">
+      
+          <img src="/images/<%=@event.image_file%>" width = "260px" height = "240px" style="float:left;">
+           </div>
+           <div class="col-md-6">  <!--seperate column made to space image and text-->
+          <h4 style="float:center;"> Address: <%=@event.address%> </h4>
+          <br>
+          <h4 style="float:center;"> Seats Left: <%=@event.capacity%> </h4>
+          <br>
+          <h4 style="float:center;"> Price:$<%=@event.price%> </h4>
+          <br>
+          <h4 style="float:center;"> Date: <%=@event.event_date%> </h4>
+          <form method="post" action="/events/<%=@event.id%>">
+          <% if !@registration_flag.nil?  %>
+            <% if @registration_flag  %>
+              <button class = "btn btn-danger btn-md" type="submit" value="cancel" name="commit"> Cancel </button>
+              <% elsif !@registration_flag  %>
+              <button class = "btn btn-success btn-md" type="submit" value="book" name="commit"> Book </button>
+
+            <% end %>
+          <% end %>
+        </form>
+       
    </div>
 </div>
 
 
 <!-- New stuff -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
-
-
-<form method="post" action="/events/<%=@event.id%>">
+<% if current_user %>
+<div class="row">
+<div class="col-md-4">
+  <form method="post" action="/events/<%=@event.id%>">
   
-  <div>
-    <label>Comment:</label>
-    <input type="text" name="message" class="form-control">
-  </div>
-  <button class = "btn btn-primary btn-lg" type="submit" value="comment" name="commit"> Post your comment! ></button>
+ 
+    <h3> Message Board </h3>
+    <textarea type="text" name="message" class="form-control"></textarea>
+    <br>
 
-</form>
+  <button type="button" class="btn btn-primary btn-md" type="submit" value="comment" name="commit"> Post Comment</button>
 
+  </form>
+
+
+<% end %>
 
 
 <div>
 	<% @comments.each do |comment| %>
 	<div>
-		<h3>
+		<h4>
 			<%= comment.message %>  <small> (by: <%= comment.user.name %>)
       </small>
-		</h3>
+		</h4>
 
 	</div>		
 	<% end %>
 </div>	
-
-
+</div>
+</div>
 
 
 

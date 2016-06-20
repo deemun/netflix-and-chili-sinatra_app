@@ -45,17 +45,19 @@ end
 
 #---------- for finding specific event--------#
 
-get '/events/:id' do 
+get '/events/:id' do      #get is always going to the html file and showing it. POST is already there and your getting input (like form)
   @event = Event.find(params[:id])
     registration_count = Registration.where(event_id: params[:id]).count
     @event.capacity -= registration_count
 
   if current_user 
     @registration = Registration.find_by(user_id: session[:user_id],event_id: params[:id])
-    if @registration.nil?
+    if !@registration.nil?    #cant call true and false on registration, as its an object. You can check for null/ not null
+       @registration_flag = true #show cancel;
+    elsif @registration.nil? && @event.capacity > 0
       @registration_flag = false
-    else
-      @registration_flag = true
+
+       #show cancel
     end
   end
   
