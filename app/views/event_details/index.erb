@@ -42,6 +42,8 @@
           <h4 style="float:center;"> Price:$<%=@event.price%> </h4>
           <br>
           <h4 style="float:center;"> Date: <%=@event.event_date%> </h4>
+          <br>
+          <h4 style="float:center;"> Start Time: <%=@event.start_time%> </h4>
           <form method="post" action="/events/<%=@event.id%>">
           <% if !@registration_flag.nil?  %>
             <% if @registration_flag  %>
