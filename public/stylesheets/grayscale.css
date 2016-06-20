@@ -559,9 +559,6 @@ form {
   
 }
 
-#create-event-button:hover {
-
-}
 
 
 
@@ -733,6 +730,7 @@ form button:hover {
   }
 }
 
+
 .shrink img {
 
   height: 200px;
@@ -749,7 +747,7 @@ form button:hover {
 .shrink img:hover {
 
   width: 320px;
-  height: 260px;
+  height: 210px;
 
 }
 
@@ -767,4 +765,16 @@ h4 {
 #eventalltitle {
     color:white;
     text-shadow: 2px 3px black;
+}
+
+#boxshadow:hover {
+    -webkit-box-shadow: 0px 0px 89px 2px rgba(255,255,255,1);
+-moz-box-shadow: 0px 0px 89px 2px rgba(255,255,255,1);
+box-shadow: 0px 0px 89px 2px rgba(255,255,255,1);
+
+
+-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
 }

@@ -6,32 +6,31 @@
 <br>
 <br>
 
-<div class="wrapper">
-<div class="row">
+
+
 
  
 
+<div class="container">
 
-  
+<h1 style="text-align: center; text-shadow: 1px 1px white;">List of Your Events</h1>
 
-<h1>List of Your Events</h1>
-
-</div>  
+ 
 <br>
 <br>
 <br>
-<div class="event_wrapper1">
+
   <% @events.each do |event|%>
    <a href = "/events/<%= event.id %>">
-      <div class="col-md-3">
+      <div class="col-md-3" id="boxshadow">
 
 
 
 
-        <img src="/images/<%=event.image_file%>" width = "250px" height = "200px" class="img-circle"></a>
+        <img src="/images/<%=event.image_file%>" width = "250px" height = "200px" class="img-rounded"></a>
         <br>
         <br>
-        <h4> Event: <%=event.title%>  </h4>
+        <h4> <%=event.title%>  </h4>
         <h4> Seats Left: <%=event.capacity%> </h4>
         <h4> Price: $<%=event.price%> </h4>
       </div>
@@ -39,5 +38,5 @@
     <%end%>
 
    
-</div>
 
+</div
