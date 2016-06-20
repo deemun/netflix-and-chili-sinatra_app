@@ -66,6 +66,9 @@ end
 
 
 post '/events/new' do  #accepting the form data and updating the messages table in db
+  if params[:image_file].empty?
+    params[:image_file] = "Default.jpg"
+  end
 	@event = Event.new(
 		title: params[:title], #params title comes from form. title on left is DB
 		address: params[:address],
