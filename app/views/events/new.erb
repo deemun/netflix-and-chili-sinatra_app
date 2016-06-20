@@ -8,7 +8,7 @@
 
 <h1 style="text-align: center;">Create an Event</h1>
 <% if @event.errors.any? %>
-  <div>
+  <div style="width:350px; margin:0 auto; color: white;">
     <strong>Some issues with your event, please fix them:</strong>
     <ul>
       <% @event.errors.full_messages.each do |event| %>
