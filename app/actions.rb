@@ -1,6 +1,6 @@
-helpers do 
+helpers do    # helper methods created to be accessed from all pages
   def current_user 
-    User.find(session[:user_id]) if session[:user_id]
+    User.find(session[:user_id]) if session[:user_id]  #when refering to users, it has to be called session. .find(session[:user_id]) is active record
   end
 end 
 
@@ -23,10 +23,10 @@ end
 #-------for event posting----------#
 
 
-get '/events' do
-	@events = Event.all
+get '/events' do # /events refers to the URL and what gets called on this specific page
+	@events = Event.all #created events variable to be called in events page
   @events.each do |event|
-    registration_count = Registration.where(event_id: event.id).count
+    registration_count = Registration.where(event_id: event.id).count #going through registration table to find events id that match 
     event.capacity -= registration_count
   end
     #Active record object being transferred into a variable.
@@ -65,7 +65,7 @@ get '/events/:id' do      #get is always going to the html file and showing it. 
 end
 
 
-post '/events/new' do  #accepting the form data and updating the messages table in db
+post '/events/new' do  #accepting the form data and updating the messages table in db. Always when posting 
   if params[:image_file].empty?
     params[:image_file] = "Default.jpg"
   end
@@ -95,13 +95,13 @@ post '/events/:id' do
       @comment = Comment.new(
       user_id: session[:user_id],
       event_id: params[:id],
-      message: params[:message])
+      message: params[:message])  #'name'=message in form, therefore params should be message.  
       if @comment.save
         redirect '/events/'+params[:id]
       else
         erb :'/event_details/index'
       end
-  elsif params[:commit] == "book"
+  elsif params[:commit] == "book"   #multiple buttons on the same page. Hardcode "value" as book. and named all of them commit.
       @registration = Registration.new(
       user_id: session[:user_id],
       event_id: params[:id])
